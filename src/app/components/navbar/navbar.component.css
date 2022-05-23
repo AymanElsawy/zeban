@@ -1,0 +1,15 @@
+.navbar{
+    background-color: #ca4153;
+}
+.nav-link{
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 25px;
+}
+.nav-link:hover,
+.nav-link:focus{
+    color: black;
+}
+.nav-link.active{
+    color: black;
+}

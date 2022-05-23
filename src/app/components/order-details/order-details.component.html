@@ -1,0 +1,68 @@
+<section>
+  <div class="container">
+  <div class="row">
+    <div class="col-sm-12" *ngFor="let item of orderDetails">
+      <div>
+        <h3>
+          <span>العنوان:</span>
+          {{ item?.address }}
+        </h3>
+        <h3>
+          <span>الاسم:</span>
+          {{ item?.name }}
+        </h3>
+        <h3>
+          <span>رقم الجوال:</span>
+          {{ item?.phone }}
+        </h3>
+        <h3>
+          <span>طريقه تأكيد الطلب:</span>
+          {{ item?.order_confirmation_method }}
+        </h3>
+        <h3>
+          <span>طريقة الدفع:</span>
+          {{ item?.payment_method }}
+        </h3>
+        <h3>
+          <span>التاريخ:</span>
+          {{ timeAgo(item?.date_created) }}
+        </h3>
+      </div>
+    </div>
+    <hr />
+
+  
+      <div class="col-sm-12 col-lg-3 col-xl-4" *ngFor="let prod of orderProducts">
+      <div class="card" style="width: 18rem" >
+        <h3>
+          <span>اسم المنتج:</span>
+          {{prod.new?.name}}</h3>
+
+        <div class="card-body">
+           <p class="card-text">
+             <span>الحجم :</span>
+           {{prod.product?.name}}
+          </p>
+         
+          <p class="card-text" >
+            <span>السعر:</span>
+           {{prod.product?.price}}
+          </p>
+         
+          <p class="card-text">
+            <span>الكميه:</span>
+           {{prod?.quantity}}
+          </p>
+          <p class="card-text">
+            <span>السعر الكلي:</span>
+           {{prod?.total_price}}
+          </p>
+        </div>
+      </div>
+     
+    </div>
+
+  </div>
+</div>
+
+</section>

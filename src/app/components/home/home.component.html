@@ -1,0 +1,9 @@
+<section>
+  <div class="container mt-3">
+    <div class="row">
+      <div class="col-sm-6 col-lg-4 col-xl-3 mt-2" *ngFor="let product of products">
+      <app-product-card [product]="product"></app-product-card>
+    </div>
+  </div>
+  </div>
+</section>

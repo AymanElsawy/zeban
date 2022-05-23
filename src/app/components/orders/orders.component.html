@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 col-lg-4 col-xl-3" *ngFor="let order of orders">
+      <div class="card mt-2" style="width: 18rem">
+        <div class="card-body">
+          <h5 class="card-title">{{ order.name }}</h5>
+          <p class="card-text">العنوان : {{ order.address }}</p>
+          <p class="card-text">
+            طريقه تأكيد الطلب : {{ order.order_confirmation_method }}
+          </p>
+          <p class="card-text">طريقه الدفع : {{ order.payment_method }}</p>
+          <p class="card-text">رقم الجوال : {{ order.phone }}</p>
+          <p class="card-text">التاريخ : {{ timeAgo(order.date_created) }}</p>
+          <a  class="btn" routerLink="/order-details" [queryParams]="order.session_id">تفاصيل الطلب</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

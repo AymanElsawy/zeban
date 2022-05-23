@@ -1,0 +1,14 @@
+section{
+    background-color: gray;
+    height: 100vh;
+}
+span{
+    color: #ca4153;
+}
+h3{
+    color: white;
+}
+.card{
+    background-color: gray;
+    border: 5px solid !important;
+}
