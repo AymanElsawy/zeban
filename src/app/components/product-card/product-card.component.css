@@ -1,10 +1,11 @@
 
 .product-image{
     height: 300px;
+    border-radius: 30px;
 }
 .card{
-    border: 5px solid #ca4153;
-    border-radius: 10px;
+    border: 1px solid #ca4153;
+    border-radius: 30px;
 }
 .btn{
     background-color: #ca4153;
