@@ -12,6 +12,7 @@ export class OrderDetailsComponent implements OnInit {
   orderId = "";
   orderDetails;
   orderProducts = [];
+  orderTotalPrice = 0;
 
 
   constructor(private route: ActivatedRoute, private productsService: ProductsService) { }
@@ -49,13 +50,13 @@ export class OrderDetailsComponent implements OnInit {
           this.productsService.getProductDeatils(this.orderProducts[z][0].category).subscribe(
             data => {
               this.orderProducts[z][0].new = data;
+              
               console.log(this.orderProducts);
             }
           )
 
         }
-
-      }
+              }
     )
   }
 

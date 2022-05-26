@@ -58,9 +58,18 @@
                     <span>السعر الكلي:</span>
                     {{ data.total_price }}
                   </p>
+                  <div *ngFor="let option of data.variants">
+                    <span>{{option.option_name?.name}}:</span>
+                    {{option.option_value.value}}
+                  </div>
+                  <div>
+                    <span>ta3`lef:</span>
+                    {{data?.fridge_status}}
+                  </div>
                 </div>
               </div>
             </div>
+            
             <hr />
           </div>
         </div>
