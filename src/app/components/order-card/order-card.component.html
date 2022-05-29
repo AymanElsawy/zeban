@@ -1,0 +1,29 @@
+<div class="card m-2 " style="width: 18rem">
+  <div class="card-body">
+    <h5 class="card-title card__title">{{ order.name }}</h5>
+    <p class="card-text card__text">
+      <span> العنوان : </span>{{ order.address }}
+    </p>
+    <p class="card-text card__text">
+      <span> طريقه تأكيد الطلب :</span> {{ order.order_confirmation_method }}
+    </p>
+    <p class="card-text card__text">
+      <span>طريقه الدفع :</span> {{ order.payment_method }}
+    </p>
+    <p class="card-text card__text">
+      <span> رقم الجوال: </span> {{ order.phone }}
+    </p>
+    <p class="card-text card__text">
+      <span> التاريخ: </span> {{ timeAgo(order.date_created) }}
+    </p>
+    <div class="text-center">
+      <a
+      class="btn "
+      *ngIf="showBtn"
+      routerLink="/order-details"
+      [queryParams]="order.session_id"
+      >تفاصيل الطلب</a>
+    </div>
+    
+  </div>
+</div>

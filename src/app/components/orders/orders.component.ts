@@ -1,7 +1,7 @@
 import { ProductsService } from './../../services/products.service';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import * as moment from 'moment';
+
 
 @Component({
   selector: 'app-orders',
@@ -21,9 +21,6 @@ export class OrdersComponent implements OnInit {
     )
   }
 
-  timeAgo(time) {
-    moment.locale("ar")
-    return moment(time).fromNow();
-  }
+
 
 }

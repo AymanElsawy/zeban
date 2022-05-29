@@ -9,6 +9,7 @@
 }
 .btn{
     background-color: #ca4153;
+    font-weight: bold;
 }
 .btn:hover{
     background-color: white;

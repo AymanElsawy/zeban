@@ -13,3 +13,7 @@
 .nav-link.active{
     color: black;
 }
+.menu-icon{
+    font-size: 40px;
+    color: white;
+}

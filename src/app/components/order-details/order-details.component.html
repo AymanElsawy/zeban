@@ -3,73 +3,50 @@
     <div class="row">
       <div class="col-sm-12" *ngFor="let item of orderDetails">
         <div class="mt-2">
-          <p>
-            <span>العنوان:</span>
-            {{ item?.address }}
-          </p>
-          <p>
-            <span>الاسم:</span>
-            {{ item?.name }}
-          </p>
-          <p>
-            <span>رقم الجوال:</span>
-            {{ item?.phone }}
-          </p>
-          <p>
-            <span>طريقه تأكيد الطلب:</span>
-            {{ item?.order_confirmation_method }}
-          </p>
-          <p>
-            <span>طريقة الدفع:</span>
-            {{ item?.payment_method }}
-          </p>
-          <p>
-            <span>التاريخ:</span>
-            {{ timeAgo(item?.date_created) }}
-          </p>
-
+          <app-order-card [order]="item"></app-order-card>
           <div class="row">
-            <div
-              class="col-sm-12 col-lg-4 col-xl-4"
-              *ngFor="let data of item.cart.item"
-            >
+            <div class="col-sm-12 col-md-6" *ngFor="let data of item.cart.item">
               <div class="card mb-2">
                 <p class="card__title">
                   <span>اسم المنتج:</span>
-                  {{ data.new?.name }}
+                  {{ data.product_details?.name }}
                 </p>
 
-                <div class="card-body">
+                <p class="card-text card__text">
+                  <span>الحجم :</span>
+                  {{ data.product?.name }}
+                </p>
+                <p class="card-text card__text">
+                  <span>الحاله:</span>
+                  {{ data.alive_delivery_form ? "حي" : "مذبوح " }}
+                </p>
+
+                <p class="card-text card__text">
+                  <span>السعر:</span>
+                  {{ data.product?.price }}
+                </p>
+
+                <p class="card-text card__text">
+                  <span>الكميه:</span>
+                  {{ data.quantity }}
+                </p>
+
+                <div class="mb-2" *ngFor="let option of data.variants">
                   <p class="card-text card__text">
-                    <span>الحجم :</span>
-                    {{ data.product?.name }}
+                    <span>{{ option.option_name?.name }}:</span>
+                    {{ option.option_value.value }}
                   </p>
-
-                  <p class="card-text">
-                    <span>السعر:</span>
-                    {{ data.product?.price }}
-                  </p>
-
-                  <p class="card-text">
-                    <span>الكميه:</span>
-                    {{ data.quantity }}
-                  </p>
-                  <p class="card-text">
-                    <span>السعر الكلي:</span>
-                    {{ data.total_price }}
-                  </p>
-                  <div *ngFor="let option of data.variants">
-                    <span>{{option.option_name?.name}}:</span>
-                    {{option.option_value.value}}
-                  </div>
-                  <div>
-                    <span>ta3`lef:</span>
-                    {{data?.fridge_status}}
-                  </div>
                 </div>
+                <p class="card-text card__text" *ngIf="data.fridge_status">
+                  <span>طريقه التغليف:</span>
+                  {{ data?.fridge_status }}
+                </p>
               </div>
             </div>
-            
+            <p class="card-text card__text">
+              <span>السعر الكلي:</span>
+              {{ item.cart.total_amount }}
+            </p>
             <hr />
           </div>
         </div>

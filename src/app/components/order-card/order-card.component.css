@@ -1,0 +1,18 @@
+.card{
+    border: 1px solid #ca4153;
+    border-radius: 30px;
+}
+.btn{
+    background-color: #181717;
+}
+.btn:hover{
+    background-color: #ca4153;
+}
+a.btn:hover{
+    color: #0c0b0b;
+}
+a.btn {
+    color: white;
+}
+
+
