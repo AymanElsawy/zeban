@@ -37,6 +37,10 @@
                     {{ option.option_value.value }}
                   </p>
                 </div>
+                <p class="card-text card__text" *ngIf="data.beef_quantity != 0">
+                  <span>كيلو مفروم :</span>
+                  {{ data.beef_quantity }}
+                </p>
                 <p class="card-text card__text" *ngIf="data.fridge_status">
                   <span>طريقه التغليف:</span>
                   {{ data?.fridge_status }}
@@ -51,7 +55,7 @@
           </div>
         </div>
       </div>
-      <hr />
+      <hr/>
     </div>
   </div>
 </section>
