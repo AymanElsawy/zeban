@@ -2,6 +2,14 @@
   <img [src]="product.image" class="card-img-top product-image" />
   <div class="card-body text-center">
     <h5 class="card-title">{{ product.name }}</h5>
-    <a  class="btn">مزيد من المعلومات</a>
+    <a
+      class="btn"
+      href="https://meatstoreapi.herokuapp.com/admin/product/category/{{
+        product.id
+      }}"
+      target="_blank"
+      >تعديل</a
+    >
   </div>
 </div>
+

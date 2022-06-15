@@ -18,9 +18,8 @@ export class OrderDetailsComponent implements OnInit {
   constructor(private route: ActivatedRoute, private productsService: ProductsService) { }
 
   ngOnInit(): void {
-    this.route.queryParams.subscribe(params => {
-
-      for (let i in params) {
+    this.route.params.subscribe(params => {
+    for (let i in params) {
         this.orderId = this.orderId + params[i]
       }
       return this.orderId;
