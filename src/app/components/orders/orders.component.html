@@ -1,10 +1,14 @@
 <div class="container">
   <div class="row">
-    <div
-      class="col-sm-12 col-md-6 col-lg-4 col-xl-4"
-      *ngFor="let order of orders"
-    >
-      <app-order-card [order]="order" [showBtn]="true"></app-order-card>
+    <ng-container *ngIf="orders.length > 0">
+      <div
+        class="col-sm-12 col-md-6 col-lg-4 col-xl-4"
+        *ngFor="let order of orders"
+      >
+        <app-order-card [order]="order" [showBtn]="true"></app-order-card></div
+    ></ng-container>
+    <div class="justify-content-center" *ngIf="orders.length == 0">
+      <h3 style="color: #ca4153;">لا يوجد اي طلبات</h3>
     </div>
   </div>
 </div>

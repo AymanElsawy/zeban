@@ -9,16 +9,26 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./orders.component.css']
 })
 export class OrdersComponent implements OnInit {
-  orders;
+  orders = [];
   constructor(private http: HttpClient, private productsService: ProductsService) { }
 
   ngOnInit(): void {
+
     this.productsService.getAllOrders().subscribe(
       data => {
-        this.orders = data;
+        this.orders = [];
+        for (let x in data) {
+          this.orders.push(data[x]);
+        }
         console.log(this.orders);
       }
     )
+
+    setInterval(() => {
+
+      this.ngOnInit();
+    }, 60000)
+
   }
 
 
