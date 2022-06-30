@@ -46,7 +46,7 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-            "assets": ["src/favicon.ico", "src/assets"],
+            "assets": ["src/newLogo.ico", "src/assets"],
             "styles": ["src/styles.css"],
             "scripts": ["node_modules/bootstrap/dist/js/bootstrap.min.js"]
           },
