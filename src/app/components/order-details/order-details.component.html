@@ -23,7 +23,7 @@
 
                 <p class="card-text card__text">
                   <span>السعر:</span>
-                  {{ data.product?.price }}
+                  {{ priceInLocalCurrency(data.product?.price) }}
                 </p>
 
                 <p class="card-text card__text">
@@ -31,7 +31,7 @@
                   {{ data.quantity }}
                 </p>
 
-                <div class="mb-2" *ngFor="let option of data.variants">
+                <div class="my-2" *ngFor="let option of data.variants">
                   <p class="card-text card__text">
                     <span>{{ option.option_name?.name }}:</span>
                     {{ option.option_value.value }}
@@ -49,13 +49,12 @@
             </div>
             <p class="card-text card__text">
               <span>السعر الكلي:</span>
-              {{ item.cart.total_amount }}
+              {{ priceInLocalCurrency(item.cart.total_amount) }}
             </p>
             <hr />
           </div>
         </div>
       </div>
-      <hr/>
     </div>
   </div>
 </section>

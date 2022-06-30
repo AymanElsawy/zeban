@@ -1,19 +1,23 @@
 .navbar{
-    background-color: #ca4153;
+    background-color: #CCD5AE;
 }
 .nav-link{
-    color: #ffffff;
+    color: #E9EDC9;
     font-weight: bold;
     font-size: 25px;
 }
 .nav-link:hover,
 .nav-link:focus{
-    color: black;
+    color: FEFAE0;
 }
 .nav-link.active{
-    color: black;
+    color: #FEFAE0;
 }
 .menu-icon{
     font-size: 40px;
     color: white;
+}
+
+.navbar-toggler:focus{
+    box-shadow: 0px 0px 0px 0px !important;
 }

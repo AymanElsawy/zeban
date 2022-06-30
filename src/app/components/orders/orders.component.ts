@@ -1,6 +1,7 @@
 import { ProductsService } from './../../services/products.service';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { orders } from 'src/app/models/orders';
 
 
 @Component({
@@ -9,23 +10,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./orders.component.css']
 })
 export class OrdersComponent implements OnInit {
-  orders = [];
+  orders:orders[] = [];
   constructor(private http: HttpClient, private productsService: ProductsService) { }
 
   ngOnInit(): void {
 
     this.productsService.getAllOrders().subscribe(
-      data => {
+      (orders:orders[]) => {
         this.orders = [];
-        for (let x in data) {
-          this.orders.push(data[x]);
+        for (let x in orders) {
+          this.orders.push(orders[x]);
         }
-        console.log(this.orders);
       }
     )
-
     setInterval(() => {
-
       this.ngOnInit();
     }, 60000)
 

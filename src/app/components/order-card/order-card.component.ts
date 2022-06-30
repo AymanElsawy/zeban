@@ -7,7 +7,7 @@ import * as moment from 'moment';
   styleUrls: ['./order-card.component.css']
 })
 export class OrderCardComponent implements OnInit {
-  @Input('order') order;
+  @Input('order') order; 
   @Input('showBtn') showBtn = false;
 
   constructor() { }
@@ -15,8 +15,8 @@ export class OrderCardComponent implements OnInit {
   ngOnInit(): void {
   }
   timeAgo(time) {
-    moment.locale("ar")
-    return moment(time).fromNow();
+    moment.locale("ar") // set locale to arabic
+    return moment(time).fromNow(); // return time ago in arabic
   }
 
 }

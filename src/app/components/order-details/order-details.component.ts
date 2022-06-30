@@ -9,10 +9,10 @@ import * as moment from 'moment';
 })
 export class OrderDetailsComponent implements OnInit {
 
-  orderId = "";
-  orderDetails;
+  orderId:string = "";
+  orderDetails=[];
   orderProducts = [];
-  orderTotalPrice = 0;
+  orderTotalPrice:number = 0;
 
 
   constructor(private route: ActivatedRoute, private productsService: ProductsService) { }
@@ -24,15 +24,20 @@ export class OrderDetailsComponent implements OnInit {
       }
       return this.orderId;
     });
+    this.getProductDetails(this.orderId);
+    this.priceInLocalCurrency(200);
+    
+  }
 
-    this.productsService.getOrderDetails(this.orderId).subscribe(
-      orders => {
+  getProductDetails(productId) { 
+    this.productsService.getOrderDetails(productId).subscribe(
+      (orders: any) => {
         this.orderDetails = orders;
         this.orderDetails.forEach(order => {
           order.cart.item.forEach(orderItem => {
             this.productsService.getProductDeatils(orderItem.category).subscribe(
               productData => {
-                orderItem.product_details= productData;
+                orderItem.product_details = productData;
               }
             )
           });
@@ -41,6 +46,10 @@ export class OrderDetailsComponent implements OnInit {
         );
       }
     )
+   }
+
+  priceInLocalCurrency(price) {
+   return (new Intl.NumberFormat('ar-SA-u-nu-latn', { style: 'currency', currency: 'SAR' }).format(price));
   }
 
   timeAgo(time) {

@@ -1,3 +1,4 @@
+import { Product } from './../../models/product';
 import { ProductsService } from './../../services/products.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -7,14 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  products;
+  products:Product[];
 
   constructor(private productsService: ProductsService) { }
 
   ngOnInit(): void {
-    this.productsService.getAllProducts().subscribe(data => {
-      this.products = data;
-      console.log(this.products);
+    this.productsService.getAllProducts().subscribe((products:Product[]) => {
+      this.products = products; // this.products is an array of products
+    }, err => {
+      console.log(err); // handle error
     })
   }
 

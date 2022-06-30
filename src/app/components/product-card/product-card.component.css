@@ -1,22 +1,28 @@
 
 .product-image{
     height: 320px;
-    border-radius: 30px;
+    border-radius: 10px;
 }
 .card{
-    border: 1px solid #ca4153;
+    border: 1px solid #CCD5AE;
     border-radius: 30px;
 }
 .btn{
-    background-color: #ca4153;
+    background-color: #FEFAE0;
     font-weight: bold;
 }
 .btn:hover{
-    background-color: white;
+    background-color: #D4A373;
 }
 a.btn:hover{
-    color: #ca4153;
+    color: #FEFAE0;
 }
 a.btn {
-    color: white;
+   color: #D4A373 
 }
+
+.product-details{
+    border-radius: 30px;
+    background-color: #CCD5AE;
+}
+
